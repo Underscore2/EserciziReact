@@ -1,5 +1,5 @@
 import React from "react";
-import Helloworld from "./Hello";
+import Hello from "./Hello";
 
 class App extends React.Component() {
 
@@ -7,7 +7,7 @@ class App extends React.Component() {
 
         return (
             <div>
-                <Helloworld />
+                <Hello />
             </div>
         )
     }
