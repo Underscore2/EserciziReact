@@ -1,14 +1,14 @@
 import React from 'react';
-
-class Helloworld extends React.Component {
+import Message from './Message'
+class Hello extends React.Component {
     render() {
         return (
             <div>
                 <h1> Hello world!</h1 >
-                <p>What a beautiful day!</p>
+                <Message />
             </div>
         )
     }
 }
 
-export default Helloworld;
+export default Hello;
