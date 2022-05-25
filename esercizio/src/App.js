@@ -1,11 +1,11 @@
 
-function Name(param) {
-  return <h1> Hello, {param}</h1>
+function sum(param1, param2) {
+  return <h2> {param1 + param2}</h2>
 }
 function App() {
   return (
     <div className="App">
-      {Name('Sara')}
+      {sum(4, 8)}
     </div>
 
   );
