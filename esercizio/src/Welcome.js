@@ -3,12 +3,16 @@ import React from "react";
 class Welcome extends React.Component {
     render() {
         return (
-            <p> Welcome  {this.props.name}</p>
+            <div>
+                <p> Welcome  {this.props.name}</p>
+                <p> Your age is {this.props.age}</p>
+            </div>
         )
     }
 }
 
 Welcome.defaultProps = {
-    name: "Rahul Bohvino"
+    name: "Rahul Bohvino",
+    age: 155
 }
 export default Welcome;
