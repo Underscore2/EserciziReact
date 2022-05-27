@@ -1,4 +1,6 @@
 import React from "react";
+import CounterDisplay from "./CounterDisplay";
+
 
 class Cloack extends React.Component {
 
@@ -17,7 +19,7 @@ class Cloack extends React.Component {
 
 
     render() {
-        return <h1>Cloack: {this.state.cloack}</h1>
+        return <CounterDisplay cloack={this.state.cloack} />
     }
 
 }
