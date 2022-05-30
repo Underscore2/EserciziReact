@@ -4,12 +4,13 @@ class ClickCounter extends react.Component {
 
     state = {
 
-        count: 0
+        name: ''
     }
 
-    handlerButtonIncrement = () => {
+    handlerButtonIncrement = (event) => {
+        console.log(event)
         this.setState((state) => {
-            return { count: state.count + 1 }
+            return { name: event.target.innerText }
         })
 
     }
@@ -17,8 +18,11 @@ class ClickCounter extends react.Component {
     render() {
         return (
             <div>
-                <h1> Count: {this.state.count}</h1>
-                <button onClick={this.handlerButtonIncrement}>AAAAAAAAA</button>
+                <h1> Ultimo bottone: {this.state.name}</h1>
+                <button name="giorgio " onClick={this.handlerButtonIncrement}>AAAAAAAAA</button>
+                <button name="giorgio2 " onClick={this.handlerButtonIncrement}>BBBBBBBBB</button>
+                <button name="giorgio3 " onClick={this.handlerButtonIncrement}>CCCCCCCCC</button>
+
             </div>
         )
     }
