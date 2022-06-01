@@ -5,7 +5,8 @@ class Login extends react.Component {
     state = {
         username: '',
         password: '',
-        remember: false
+        remember: false,
+        login: true
     }
 
     inputHandler = (event) => {
@@ -15,13 +16,20 @@ class Login extends react.Component {
         const type = event.target.type
 
 
+
         this.setState({
-            [name]: type === 'checkbox' ? remember : value
+            [name]: type === 'checkbox' ? remember : value,
+            login:
+                this.state.username !== '' ||
+                    this.state.password !== '' ? false : true
         })
 
 
     }
 
+    onLogin = () => {
+        console.log(this.state)
+    }
     render() {
         return (
             <div>
@@ -30,13 +38,11 @@ class Login extends react.Component {
                 <div> <h3>Password:</h3>
                     <input type="password" name="password" value={this.state.password} onChange={this.inputHandler} />
                     <input type="checkbox" name="remember" value={this.state.remember} onChange={this.inputHandler} />
+                    <button type='submit' disabled={this.state.login} onClick={this.onLogin}>Login</button>
                 </div>
             </div>
         )
     }
 
-    componentDidUpdate() {
-        console.log(this.state)
-    }
 }
 export default Login;
