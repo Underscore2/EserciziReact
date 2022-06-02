@@ -2,7 +2,7 @@ import react, { createRef } from 'react';
 
 class Login extends react.Component {
     _formRef = createRef()
-
+    _autoFocus = createRef()
     inputHandler = (event) => {
         event.preventDefault()
 
@@ -34,7 +34,7 @@ class Login extends react.Component {
                 <form ref={this._formRef} onSubmit={this.inputHandler}>
                     <div>
                         <h3>Nome:</h3>
-                        <input type="text" name="username" /></div>
+                        <input type="text" ref={this._autoFocus} name="username" /></div>
                     <div>
                         <h3>Password:</h3>
                         <input name="password" type="password" />
@@ -46,6 +46,9 @@ class Login extends react.Component {
                 </form>
             </div>
         )
+    }
+    componentDidMount = () => {
+        this._autoFocus.current.focus()
     }
 
 }
