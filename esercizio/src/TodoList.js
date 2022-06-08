@@ -1,40 +1,45 @@
-import React, { createRef } from 'react';
+import React from 'react'
 
-class Todolist extends React.Component {
-    inpt = createRef
+
+class TodoList extends React.Component {
+
     state = {
-        item: [
-            'Cane', 'Gatto', 'Topo', 'Sara'
-        ],
-        addItems: ''
+        todos: ['Cane', 'Gatto', 'Topo', 'Sara'],
+        value: ''
     }
 
-    eventHandler = (event) => {
-
+    inputSaver = (event) => this.setState({ value: event.target.value });
+    dataPusher = (event) => {
         this.setState((state) => {
-            console.log(state.addItems)
-            return { addItems: state.addItems = event.target.value }
-        })
-    }
-
-    eventSaver = () => {
-        this.setState((state) => {
-            console.log(this.state.addItems)
-            console.log(this.state.item)
-            return { item: state.item.concat(this.state.addItems) }
+            
+            return {
+                todos: state.todos.concat(this.state.value),
+                value: state.value=''
+            
+          
+            }
         })
     }
 
 
     render() {
         return (
-            <div>
-                <ul>{this.state.item.map((item, index) => (<li key={index}>{item}</li>))}</ul>
-
-                <input type="text" value={this.state.addItems} onChange={this.eventHandler} />
-                <button onClick={this.eventSaver}>CAMBIA</button>
-            </div>
+            <>
+                <ul>
+                    <h1>To do list</h1>
+                    {this.state.todos.map((todo, index) => {
+                        return (
+                            <li key={index}>{todo}</li>
+                        )
+                    })}
+                    <input type="text" name='inputin' value={this.state.value}onChange={this.inputSaver}></input>
+                    <button  onClick={this.dataPusher}>
+                        Add
+                    </button>
+                </ul>
+            </>
         )
     }
 }
-export default Todolist
+
+export default TodoList
