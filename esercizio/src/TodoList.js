@@ -7,9 +7,9 @@ class TodoList extends React.Component {
         todos: ['Cane', 'Gatto', 'Topo', 'Sara'],
         value: ''
     }
-
+    resetList = ()=>{ this.setState({todos:['Cane', 'Gatto', 'Topo', 'Sara']})}
     inputSaver = (event) => this.setState({ value: event.target.value });
-    dataPusher = (event) => {
+    dataPusher = () => {
         this.setState((state) => {
             
             return {
@@ -36,6 +36,7 @@ class TodoList extends React.Component {
                     <button  onClick={this.dataPusher}>
                         Add
                     </button>
+                    <button onClick={this.resetList}> Reset </button>
                 </ul>
             </>
         )
