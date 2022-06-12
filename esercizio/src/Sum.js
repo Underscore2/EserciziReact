@@ -1,7 +1,7 @@
-function Sum(props) {
+function Sum({ numbers = [2, 2, 1, 20] }) {
     return (
         <h1>Sum:
-            {props.numbers.reduce((total, current) => { return (total += current) })}
+            {numbers.reduce((total, current) => { return (total += current) })}
         </h1>
     )
 }
