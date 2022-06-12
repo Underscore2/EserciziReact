@@ -1,10 +1,10 @@
 import './App.css';
-import Welcome from './Welcome';
+import Sum from './Sum';
 
 function App() {
   return (
     <div className="App">
-      <Welcome name='Mariangiangiangela' />
+      <Sum numbers={[2, 2, 10, 1]} />
     </div>
   );
 }
