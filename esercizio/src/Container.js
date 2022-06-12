@@ -13,7 +13,7 @@ class Container extends react.Component{
                    { this.props.children}
                 </div>
 
-                <div className='divStyleBlu'> </div>
+                <div className='divStyleBlu'><h1>{this.props.title} </h1></div>
             </>
         )
     }
