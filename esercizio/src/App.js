@@ -15,6 +15,9 @@ class App extends React.Component {
     })
   }
 
+  /*Ho unito esercizio 1 e 2 Senza rendermene conto
+  LOL! questo commento mi serve per committare */
+
   render() {
     return (
       <div className="App">
