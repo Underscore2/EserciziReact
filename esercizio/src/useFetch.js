@@ -3,10 +3,12 @@ import { useState,useEffect } from "react"
 export default function useFetch(username){
 
     const [data,setData]=useState(username)
+    const [loading,setLoading]=useState(false)
     const [error,setError]=useState(false)
   
     async function userProvider (){ 
     try {
+        setLoading(true)
         const response = await fetch(`https://api.github.com/users/${username}`);
         if(response.status === 200){
       const pack = await response.json()
@@ -16,6 +18,7 @@ export default function useFetch(username){
       else{
           throw new Error('Impossibile comunicare con il server.');
         }
+        setLoading(false)
     }catch(errore){
         return setError(errore);
     }
@@ -26,6 +29,6 @@ userProvider()
 
    },[])
 
-   return{data,error}
+   return{data,error,loading}
 
 }
