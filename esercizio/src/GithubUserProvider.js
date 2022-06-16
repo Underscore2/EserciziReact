@@ -1,5 +1,5 @@
 import { useEffect,useState } from "react"
-
+  
 export default function GithubUserProvider({username}){
    const [data,setData]=useState('')
     const [error,setError]=useState(false)
