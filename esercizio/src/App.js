@@ -1,10 +1,11 @@
 import './App.css';
-import Counter from './Counter';
+import Forms from './Forms';
+
 
 function App() {
   return (
     <div className="App">
-     <Counter/>
+      <Forms/>
     </div>
   );
 }
