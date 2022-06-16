@@ -1,7 +1,8 @@
 import { useEffect,useState } from "react"
   
 export default function GithubUserProvider({username}){
-   const [data,setData]=useState('')
+    console.log(username)
+   const [data,setData]=useState(username)
     const [error,setError]=useState(false)
    async function userProvider (){ 
     try {
