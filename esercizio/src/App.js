@@ -4,7 +4,7 @@ function App() {
 
   return (
     <div className="App">
-     <GithubUserProvider username='Underscor2'/>
+     <GithubUserProvider username='Underscore2'/>
     </div>
   );
 
