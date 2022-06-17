@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
-
+import FilterdList from './FilteredList';
+import { useState } from 'react'
 function App() {
+  // eslint-disable-next-line
+  const [list, setList] = useState([{
+    id: 1,
+    name: 'Mariottide',
+    age: 7
+  }, {
+    id: 2,
+    name: 'Marcovaldo',
+    age: 22
+  },
+  {
+    id: 3,
+    name: 'Pierstruzzo',
+    age: 19
+  },
+  {
+    id: 4,
+    name: 'Mariafranca',
+    age: 4
+  }])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FilterdList list={list}/>
     </div>
   );
 }
