@@ -1,13 +1,10 @@
-import react from 'react';
 
-class DisplayLanguage extends react.Component {
-    render() {
+export default function DisplayLanguage(props){
+    
         return (
             <div>
-
-                {this.props.children}
+                {props.children}
             </div>
         )
-    }
-}
-export default DisplayLanguage
+ }
+

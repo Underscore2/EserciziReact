@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { LanguageContext } from "./LanguageContext";
 
 const strings = {
@@ -9,22 +9,16 @@ const strings = {
         WELCOME: "Welcome! what can i do for you?"
     }
 }
-class Title extends React.Component {
-    render() {
+export default function Title(){
+    const language = useContext(LanguageContext)
 
 
-        return (
-            <LanguageContext.Consumer>
-                {((language) => {
-
-                    return (
-                        <h1>{strings[language].WELCOME}</h1>
-
-                    )
-                })}
-            </LanguageContext.Consumer>
-        )
-    }
+    return(
+          <h1> { strings[language].WELCOME }</h1 >
+ )
+  
 }
 
-export default Title
+
+
+
