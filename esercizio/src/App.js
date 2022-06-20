@@ -22,6 +22,7 @@ function App() {
           <Route path='/' element={<Welcome name='Giangiorgio' />}> </Route>
           <Route path='/counter' element={<Counter />}></Route>
           <Route path='user' element={<ShowGithubUser />}>
+            <Route index element={<h3>Scrivi un nome e clicca il link!</h3>}/>
             <Route path=':name' element={<GithubUserProvider/>}/>
            
           </Route>
