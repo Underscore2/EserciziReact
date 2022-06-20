@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom";
 
-export default function GithubUserProvider({ name }) {
+export default function GithubUserProvider() {
   const [data, setData] = useState('')
   const [error, setError] = useState(false)
+  const {name} = useParams()
   async function userProvider() {
     try {
       const response = await fetch(`https://api.github.com/users/${name}`);
+      console.log(name)
       if (response.status === 200) {
         const pack = await response.json()
         setData(pack)
@@ -23,7 +26,7 @@ export default function GithubUserProvider({ name }) {
   useEffect(() => {
     userProvider()
 
-  }, [])
+  }, [name])
 
 
   return (
