@@ -5,9 +5,9 @@ export default function CarDetails({info}) {
     const targetYear= useRef()
     return (
         <>
-        <input ref={targetModel} onChange={()=>{targetModel.current.value=''}} type='text' defaultValue={info.model}></input>
-        <input ref={targetYear}  onChange={()=>{targetYear.current.value=''}} type='number' defaultValue={info.year}></input>
-        <input ref={targetColor}  onChange={()=>{targetColor.current.value=''}} type='text' defaultValue={info.color}></input>
+        <input ref={targetModel} onFocus={()=>{targetModel.current.value=''}} type='text' defaultValue={info.model}></input>
+        <input ref={targetYear}  onFocus={()=>{targetYear.current.value=''}} type='number' defaultValue={info.year}></input>
+        <input ref={targetColor}  onFocus={()=>{targetColor.current.value=''}} type='text' defaultValue={info.color}></input>
         </>
     )
 }
