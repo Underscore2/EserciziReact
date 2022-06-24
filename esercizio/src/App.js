@@ -1,7 +1,9 @@
 import { useState} from 'react'; 
+import { SWRConfig } from 'swr';
 import './App.css';
 import GithubUserProvider from './GithubUserProvider';
 const array=['Underscore2']
+const fetcher=url=>fetch(url).then((resp)=>resp.json());
 
 
 export default function App() {
@@ -20,12 +22,18 @@ setName('')
 
 
   return (
+    <SWRConfig value={{fetcher}}>
     <div className="App">
 
       {array.map ((element)=>{return(
+        <>
+        
+        {element!==""&&
         <div style={{border: "1px solid red,",width:'500px', height:'500px'}}>
         <GithubUserProvider username={element}/>
-        </div>
+        </div>}
+        </>
+
         )})}
      <form onSubmit={launchData}>
      <input type='text' name='insertName' value={name} onChange={insertNameHandler} ></input>
@@ -33,6 +41,7 @@ setName('')
      </form>
 
     </div>
+    </SWRConfig>
   );
 
       }
