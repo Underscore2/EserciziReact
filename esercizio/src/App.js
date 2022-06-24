@@ -1,5 +1,5 @@
 import { useState} from 'react'; 
-import { SWRConfig } from 'swr';
+import { mutate, SWRConfig } from 'swr';
 import './App.css';
 import GithubUserProvider from './GithubUserProvider';
 const array=['Underscore2']
@@ -31,6 +31,7 @@ setName('')
         {element!==""&&
         <div style={{border: "1px solid red,",width:'500px', height:'500px'}}>
         <GithubUserProvider username={element}/>
+     
         </div>}
         </>
 
