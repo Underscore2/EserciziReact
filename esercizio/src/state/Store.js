@@ -10,4 +10,4 @@ export const store = createStore(rootReducer)
 store.subscribe(() => {
     console.log(store.getState())
 })
-/*Sperimentando ho unito Redux 03*/
+/*Sperimentando ho unito Redux 03,04,05*/
