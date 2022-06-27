@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { store } from './state/Store';
+import { addTodo,removeTodo,editTodo } from './state/todoState';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -10,6 +12,12 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+store.dispatch(addTodo({ id: 1, title: 'Ho caldo', completed: true }));
+store.dispatch(addTodo({ id: 2, title: 'Voglio andare al mare', completed: true }));
+store.dispatch(editTodo(1, {title: 'HO DAVVERO TANTO CALDO', completed: true}));
+store.dispatch(removeTodo(1));
+
 
 
 

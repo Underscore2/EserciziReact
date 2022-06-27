@@ -1,9 +1,4 @@
 
-
-
-
-
-
 export const defaultState = 0;
 
 const INCREMENT = "COUNTER@INCREMENT";
