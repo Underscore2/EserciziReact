@@ -1,28 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-import Container from './Container';
+import React from 'react'
+import TodoList from './TodoList'
 
-function App() {
-  return (
-    <div className="App">
-      <Container>
-       {
-        ((list,deleteHandler)=>{
-          return(
-            <ul>
 
-              {list.map((item,i)=>{
-                return(
-                  <li key={i}>{item} <button onClick={()=>{deleteHandler(item)}} key={i+'btn'}>Delete</button></li>
-                )
-              })}
-            </ul>
-          )
-        })
-       }
-      </Container>
-    </div>
-  );
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <TodoList item={
+        (list, handleRemove) =>
+          <ul>
+            {list.map((items, index) =>
+              <>
+                <li key={index}>{items}</li>
+                <button onClick={handleRemove}>Remove</button>
+              </>
+            )}
+          </ul>
+      }
+      />
+    )
+  }
 }
-
-export default App;
